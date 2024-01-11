@@ -1,13 +1,10 @@
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelectorAll('.nav__link')
+let navLinks = document.querySelectorAll('.nav__link');
+let bodyId = document.querySelector("body").id;
 
 
-navToggle.addEventListener('click', () => {
-    document.body.classList.toggle('nav-open');
-})
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        document.body.classList.remove('nav-open');
-    })
-})
+for (let link of navLinks) {
+    if (link.dataset.active == bodyId) {
+        console.log(bodyId)
+        link.classList.add("active");
+    }
+}
