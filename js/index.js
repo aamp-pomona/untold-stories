@@ -1,3 +1,4 @@
+// for the navigation bar
 let navLinks = document.querySelectorAll('.nav__link');
 let bodyId = document.querySelector("body").id;
 

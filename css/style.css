@@ -16,6 +16,7 @@
     --clr-light: #fff;
     --clr-dark: #303030;
     --clr-accent: #56C4C0;
+    --clr-pastel: #ddebeb;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -86,9 +87,7 @@ strong {font-weight: var(--fw-bold);}
 
 /* Typography */
 
-h1, 
-h2, 
-h3 {
+h1, h2, h3 {
     line-height: 1; 
     margin: 0; 
 }
@@ -96,7 +95,6 @@ h3 {
 h1 {font-size: var(--fs-h1) }
 h2 {font-size: var(--fs-h2) }
 h3 {font-size: var(--fs-h3) }
-
 /*
 .section__title {
     margin-bottom: .25em;
@@ -181,6 +179,88 @@ header h1 {
     outline: none; 
 }
 
+/* auto-scrolling exhibit */
+/* .exhibit {
+    background-color: var(--clr-pastel);
+    height: 25rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+} */
+
+.exhibit {
+    background-color: var(--clr-pastel);
+    margin: auto;
+    height: 40rem;
+    position: relative;
+    width: 100%; 
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.exhibit .track {
+    display: flex;
+    width: calc(350px * 8);
+    animation: scroll 25s linear infinite;
+}
+
+.exhibit .track:hover {
+    animation-play-state: paused;
+}
+
+.exhibit .track .art {
+    width: 350px;
+    height: auto;
+    display: flex; 
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+
+.exhibit .art img {
+    width: 100%;
+    transition-duration: .7s;
+}
+
+.exhibit .art img:hover {
+    transform: translateZ(10px);
+ }
+
+/* gradient shadows*/
+.exhibit:before, .exhibit:after {
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    z-index: 2;
+}
+
+.exhibit:before {
+    left: 0;
+    top: 0;
+}
+
+.exhibit:after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(calc(-350px * 4));
+    }
+
+}
+
 /* section */
 .about-us {
     background-color: var(--clr-accent);
@@ -190,7 +270,7 @@ header h1 {
 /* footer */ 
 .footer {
     background: #111;
-    color: var(--clr-light);
+    color: var(--clr-pastel);
     text-align: center;
     padding: 2.5em 0;
     font-size: var(--fs-body);
