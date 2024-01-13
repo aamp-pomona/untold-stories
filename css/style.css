@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Custom properties */
+/* CUSTOM PROPERTIES */
 
 :root {
     --ff-primary: 'Montserrat', sans-serif;
@@ -36,7 +36,7 @@
     }
 }
 
-/* General styles */
+/* GENERAL STYLES */
 html {
     scroll-behavior: smooth;
 }
@@ -66,7 +66,7 @@ strong {font-weight: var(--fw-bold);}
     outline-offset: 3px;
 }
 
-/* Buttons */
+/* BUTTONS */
 .btn {
     display: inline-block;
     padding: .5em 1.5em;
@@ -85,7 +85,7 @@ strong {font-weight: var(--fw-bold);}
     transform: scale(1.1);
 }
 
-/* Typography */
+/* TYPOGRAPHY */
 
 h1, h2, h3 {
     line-height: 1; 
@@ -127,7 +127,7 @@ h3 {font-size: var(--fs-h3) }
     margin-bottom: 2em;
 }
 */
-/* Header */
+/* HEADER */
 header {
     text-align: center;
     padding: 75px 0 30px;
@@ -179,16 +179,7 @@ header h1 {
     outline: none; 
 }
 
-/* auto-scrolling exhibit */
-/* .exhibit {
-    background-color: var(--clr-pastel);
-    height: 25rem;
-    overflow: hidden;
-    position: relative;
-    width: 100%; 
-    display: flex;
-    align-items: center;
-} */
+/* INDEX - SCROLLING EXHIBIT*/
 
 .exhibit {
     background-color: var(--clr-pastel);
@@ -203,7 +194,7 @@ header h1 {
 
 .exhibit .track {
     display: flex;
-    width: calc(350px * 8);
+    width: calc(400px * 16);
     animation: scroll 25s linear infinite;
 }
 
@@ -212,7 +203,7 @@ header h1 {
 }
 
 .exhibit .track .art {
-    width: 350px;
+    width: 400px;
     height: auto;
     display: flex; 
     align-items: center;
@@ -229,7 +220,7 @@ header h1 {
     transform: translateZ(10px);
  }
 
-/* gradient shadows*/
+/* gradient shadows */
 .exhibit:before, .exhibit:after {
     background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
     content: "";
@@ -250,15 +241,13 @@ header h1 {
     transform: rotateZ(180deg);
 }
 
-
 @keyframes scroll {
     0% {
         transform: translateX(0px);
     }
     100% {
-        transform: translateX(calc(-350px * 4));
+        transform: translateX(calc(-400px * 8));
     }
-
 }
 
 /* section */
@@ -267,7 +256,7 @@ header h1 {
     color: var(--clr-light);
 }
 
-/* footer */ 
+/* FOOTER */ 
 .footer {
     background: #111;
     color: var(--clr-pastel);
